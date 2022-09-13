@@ -25,20 +25,22 @@ for (i in orders){
         itemcount = parseInt(singelOrder[3+i].toString().split(' ') [1]);
         price = parseFloat(singelOrder[3+i].toString().split(' ') [2]);
         total = parseFloat(singelOrder[3+i].toString().split(' ') [3]);
-        items.push(`{'name':${itemName},'count':${itemcount},'price':${price},'total':${total}}`)
+        items.push(`'name':${itemName},'count':${itemcount},'price':${price},'total':${total}`)
     }
-    totalPrice = parseFloat(singelOrder[2+NoOfOrders].toString().split(' ') [0]);
+    totalPrice = parseFloat(singelOrder[3+NoOfOrders].toString().split(' ') [0]);
+    discount = parseFloat(singelOrder[3+NoOfOrders].toString().split(' ') [1]);
+    totalAfterDiscount = parseFloat(singelOrder[3+NoOfOrders].toString().split(' ') [2]);
 
     result.push(`{'customer':${cust},
-    'address':{latitude:${latitude},'longitude':${longitude}},
+    'address':{latitude:${latitude},
+    'longitude':${longitude}},
     'items':${items},
-    'total':${totalPrice}
-
-}`)
+    'total':${totalPrice},
+    'discount':${discount},
+    'totalAfterDiscount':${totalAfterDiscount}}`)
 
 }
-console.log(result)
 
 
 
-exports.data;
+module.exports.result = result;
