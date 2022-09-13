@@ -9,7 +9,7 @@ app.get('/',(req,res) => {
 
 app.get('/orders',(req,res) => {
     // var jsonObj = JSON.parse(dh);
-    res.send(JSON.stringify(dh));
+    res.send(dh)
 })
 
 

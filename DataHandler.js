@@ -31,16 +31,16 @@ for (i in orders){
     discount = parseFloat(singelOrder[3+NoOfOrders].toString().split(' ') [1]);
     totalAfterDiscount = parseFloat(singelOrder[3+NoOfOrders].toString().split(' ') [2]);
 
-    result.push(`{'customer':${cust},
-    'address':{latitude:${latitude},
-    'longitude':${longitude}},
-    'items':${items},
-    'total':${totalPrice},
-    'discount':${discount},
-    'totalAfterDiscount':${totalAfterDiscount}}`)
+    result.push(`{customer:${cust},
+    address:{latitude:${latitude},
+    longitude:${longitude}},
+    items:${items},
+    total:${totalPrice},
+    discount:${discount},
+    totalAfterDiscount:${totalAfterDiscount}}`)
 
 }
 
+jsonObj = JSON.stringify(result)
 
-
-module.exports.result = result;
+module.exports.jsonObj = jsonObj;
